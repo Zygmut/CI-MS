@@ -21,7 +21,7 @@ if (!$conn) {
     $response['error'] = "Conexión fallida: " . mysqli_connect_error();
 } else {
     // Obtener el valor de la variable pasada
-    #$id = $_GET['id']; // Cambia 'nombre' al nombre real de la variable que estás pasando
+    $id = $_GET['id']; // Cambia 'nombre' al nombre real de la variable que estás pasando
 
     // Preparar la consulta SQL con la variable
     $sql = "SELECT
@@ -49,7 +49,7 @@ if (!$conn) {
         JOIN CARACTERISTICA c ON
             c._id = pc._id_caracteristica
         WHERE
-            p._id = 6;";
+            p._id = $id;";
 
     // Ejecutar la consulta
     $resultado = $conn->query($sql);

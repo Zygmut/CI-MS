@@ -8,7 +8,14 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    query = await call("../server/plantas.php")
+
+    id = loadURLContent();
+    if(!parseInt(id)){
+        console.log("Id no válida");
+        return;
+    }
+
+    query = await call("../server/plantas.php?id="+id)
     document.getElementById("plant_name").innerHTML=query._nom_prod
     document.getElementById("sci_name").innerHTML="mussasapientum"
     document.getElementById("price").innerHTML=query.coste
@@ -19,3 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
     
+function loadURLContent() {
+    const URLparams = new URLSearchParams(window.location.search);
+    return URLparams.get("id");
+}
