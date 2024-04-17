@@ -8,12 +8,12 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    query = await call("http://127.0.0.1:5500/client/prueba.json")
-    document.getElementById("plant_name").innerHTML=query.nombre
-    document.getElementById("sci_name").innerHTML="biel"
+    query = await call("../server/plantas.php")
+    document.getElementById("plant_name").innerHTML=query._nom_prod
+    document.getElementById("sci_name").innerHTML="mussasapientum"
     document.getElementById("price").innerHTML=query.coste
-    document.getElementById("plant_description").innerHTML=query.descripcion
-    console.log(query.caracteristicas[1].nombre)
+    document.getElementById("prod_image").src=query.imagen
+    document.getElementById("plant_description").innerHTML=query._desc_prod
     for (let index = 0; index < query.caracteristicas.length; index++) {
         document.getElementById("plant_char").innerHTML += "<li><a style='float: right;'>" + query.caracteristicas[index].valor + "</a>" + query.caracteristicas[index].nombre + "</li>";
     }
