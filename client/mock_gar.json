@@ -1,0 +1,29 @@
+[
+  {
+    "_id": 1,
+    "nombre": "Jardín Botánico",
+    "descripcion": "Un hermoso jardín con una gran variedad de plantas y flores.",
+    "valoracion": 4.5,
+    "imagen": "jardin_botanico.jpg",
+    "characteristics": ["aquatic", "safe", "premium"],
+    "location": "City A"
+  },
+  {
+    "_id": 2,
+    "nombre": "Parque Acuático",
+    "descripcion": "Un parque con piscinas, toboganes y diversión acuática para toda la familia.",
+    "valoracion": 4.2,
+    "imagen": "parque_acuatico.jpg",
+    "characteristics": ["aquatic", "family-friendly", "thrilling"],
+    "location": "City B"
+  },
+  {
+    "_id": 3,
+    "nombre": "Jardín Zen",
+    "descripcion": "Un tranquilo jardín japonés diseñado para la meditación y la contemplación.",
+    "valoracion": 4.7,
+    "imagen": "jardin_zen.jpg",
+    "characteristics": ["serene", "meditative", "zen"],
+    "location": "City C"
+  }
+]
