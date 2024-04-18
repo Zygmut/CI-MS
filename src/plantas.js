@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    query = await call("../server/plantas.php?id="+id)
+    query = await call("/api/plantas.php?id="+id)
     document.getElementById("plant_name").innerHTML=query._nom_prod
     document.getElementById("sci_name").innerHTML="mussasapientum"
     document.getElementById("price").innerHTML=query.coste
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("plant_char").innerHTML += "<li><a style='float: right;'>" + query.caracteristicas[index].valor + "</a>" + query.caracteristicas[index].nombre + "</li>";
     }
 });
-    
+
 function loadURLContent() {
     const URLparams = new URLSearchParams(window.location.search);
     return URLparams.get("id");
