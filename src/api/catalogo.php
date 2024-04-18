@@ -1,8 +1,15 @@
-la base de datos
-    $conn = mysqli_connect($servername, $username, $password, $database);
-} catch (Exception $e) {
-    $response['error'] = $e->getMessage();
-}
+<?php
+// Datos de conexión a la base de datos
+$servername = "bbdd.musapientum.com";
+$username = "ddb222084";
+$password = "ptkcu]7cwrSps(";
+$database = "ddb222084";
+
+// Variable para almacenar la respuesta
+$response = array();
+
+// Intentar establecer la conexión a la base de datos
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar la conexión
 if (!$conn) {
@@ -31,22 +38,25 @@ if (!$conn) {
         while ($row = $resultado->fetch_assoc()) {
             // Agregar características al array de características
             $plantas[] = array(
-                'id' => $row['_id'],
-                'nombre' => $row['nombre'],
-                'descripcion' => $row['descripcion']
-                'coste' => $row['coste']
-                'imagen' => $row['imagen']
+                'id' => utf8_encode($row['_id']),
+                'nombre' => utf8_encode($row['nombre']),
+                'descripcion' => utf8_encode($row['descripcion']),
+                'coste' => utf8_encode($row['coste']),
+                'imagen' => utf8_encode($row['imagen'])
             );
         }
 
         // Agregar arrays de características y temporadas al response
-        $response = $plantas
+        $response['plantas'] = $plantas;
     } else {
         $response['error'] = "No se encontraron resultados.";
     }
 }
-// Cerrar la conexión
-$conn->close();
+
+// Cerrar la conexión si está abierta
+if ($conn) {
+    $conn->close();
+}
 
 $json_response = json_encode($response, JSON_UNESCAPED_UNICODE);
 

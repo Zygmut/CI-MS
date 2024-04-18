@@ -8,11 +8,11 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const query = await call("../server/catalogo.php")
+    const query = await call("/api/catalogo.php");
     const articles = document.getElementById("articles");
 
-    for (const plant of query) {
-        articles.insertAdjacentHTML("beforeend", ```
+    for (const plant of query.plantas) {
+        articles.insertAdjacentHTML("beforeend", `
             <article class="w-min-10 flex max-w-md grow flex-col gap-3">
                 <img src="${plant.imagen}" alt="${plant.nombre}" class="rounded-2xl">
                 <h2 class="text-xl">${plant.nombre}</h2>
@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </button>
                 </div>
             </article>
-        ```);
+        `);
     }
 });
