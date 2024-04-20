@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <h2 class="text-xl">${plant.nombre}</h2>
                 <p>${plant.descripcion}</p>
                 <div class="text-light flex gap-2">
-                    <button class="bg-primary grow rounded-full p-3" href="/plantas.html?id=${plant.id}">
+                    <a class="bg-primary grow rounded-full p-3 text-center" href="/plantas.html?id=${plant.id}">
                         <i class="fa fa-solid fa-circle-info p-1"></i>
                         <a>Más</a>
-                    </button>
+                    </a>
                     <button class="bg-primary grow rounded-full p-3">
                         <i class="fa fa-solid fa-cart-shopping p-1"></i>
                         <span>Añadir</span>
