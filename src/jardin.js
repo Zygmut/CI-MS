@@ -8,7 +8,7 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let query = await call("http://127.0.0.1:5500/client/mock_gar.json");
+  let query = await call("/mock_gar.json");
 
   const gardensHTML = await Promise.all(
     query.map(async (element) => {
