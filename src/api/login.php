@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Usuario y contraseña válidos
         // Redirigir al usuario a register.html
-        header("Location: catalogo.html?username=" . urlencode($user));
+        header("Location: /catalogo.html?username=" . urlencode($user));
         exit(); // Es importante terminar la ejecución del script después de la redirección
     } else {
         // Usuario y/o contraseña incorrectos
-        header("Location: register.html?error=true");
+        header("Location: /register.html?error=true");
     }
 
     // Cerrar la conexión

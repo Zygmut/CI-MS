@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO PERSONA (nombre, apellidos, correo, telf, usu, pass) VALUES ('$nombre', '$apellidos', '$email', '$telefono', '$usu', '$pass')";
     if ($conn->query($sql) === TRUE) {
         // Redireccionar a login.html
-        header("Location: login.html");
+        header("Location: /login.html");
         exit();
     } else {
         $message = "Error al realizar la operación: " . $conn->error;
