@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="text-light flex gap-2">
                     <a class="bg-primary grow rounded-full p-3 text-center" href="/plantas.html?id=${plant.id}">
                         <i class="fa fa-solid fa-circle-info p-1"></i>
-                        "Más"
+                        Más
                     </a>
                     <button class="bg-primary grow rounded-full p-3">
                         <i class="fa fa-solid fa-cart-shopping p-1"></i>
