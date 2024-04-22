@@ -8,6 +8,12 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+    const username = getUsername();
+    console.log(username);
+    if (username !== null) {
+        document.getElementById("username").innerText = username;
+    }
+
     const query = await call("/api/catalogo.php");
     const articles = document.getElementById("articles");
 
@@ -31,3 +37,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         `);
     }
 });
+
+function getUsername() {
+    const URLparams = new URLSearchParams(window.location.search);
+    return URLparams.get("username");
+}
