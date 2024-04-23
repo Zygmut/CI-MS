@@ -8,20 +8,17 @@ async function call(url) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let query = await call("/mock_gar.json");
+  let query = await call("mock_gar.json");
 
   const gardensHTML = await Promise.all(
     query.map(async (element) => {
-      const imageUrl = await fetch("https://picsum.photos/300")
-        .then((image) => image.blob())
-        .then((blob) => URL.createObjectURL(blob));
       return createGarden(
         element["nombre"],
         element["location"],
         element["characteristics"],
         element["descripcion"],
         element["valoracion"],
-        imageUrl // Pass the URL of the image blob
+        element["imagen"]// Pass the URL of the image blob
       );
     })
   );
@@ -57,7 +54,7 @@ function createGarden(
           </div>
         </article>
 
-        <div class="card-body row gx-4 gx-lg-5 align-items-center p-0 m-3">
+        <div class="card-body row gx-4 gx-lg-5  p-0 m-3">
 
           <!-- Left side -->
           <div class="col-xl-6 p-1">
@@ -65,7 +62,7 @@ function createGarden(
           </div>
 
           <!-- Right side -->
-          <div class="col-xl-6 p-1 justify-content-evenly">
+          <div class="col-xl-6 p-1 top-0">
             <div>
               <h3>Characteristics</h3>
 
@@ -76,7 +73,7 @@ function createGarden(
 
             <div>
               <h3 class="pt-3">Description</h3>
-              <p id="description" class="lead p-0" style="text-align: justify">
+              <p id="description" class="lead p-0" style="text-align: justify; ">
                 ${description}
               </p>
             </div>
