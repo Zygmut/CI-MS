@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/icon.ico">
+    <title>Planta</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #528B3E; margin-bottom: 3rem;">
+        <div class="container-fluid">
+
+          <!-- TODO: Poner el link de la pagina principal -->
+          <a class="navbar-brand" href="/catalogo.html">Cooperativa Illenca</a>
+
+          <!-- Collapsable button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="navbar-brand">
+                    <img src="/img/user_icon.png" width=40>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section class="py-2">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6">
+                  <img id="prod_image" class="card-img-top mb-5 mb-md-0" height="400" />
+                </div>
+                <div class="col-md-6">
+                  <h1 id="plant_name" class="display-5 fw-bolder"></h1>
+                  <div id="sci_name" class="small mb-1"></div>
+                  <div class="fs-5 mb-3">
+                    <span id="price"></span>€
+                  </div>
+                  <div class="small mb-1"><b>Descripción</b></div>
+                    <p id="plant_description" class="lead"></p>
+                    <div class="card mb-4">
+                      <div class="card-header"><b>Características</b></div>
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <ul id="plant_char" class="list-unstyled mb-0">
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    <div class="d-flex">
+                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/plantas.js"></script>
+
+</html>

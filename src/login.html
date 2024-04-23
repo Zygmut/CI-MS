@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/img/icon.ico">
+  <title>Iniciar sesión</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Iniciar sesión</h3>
+        </div>
+        <div class="card-body">
+
+          <form id="login-form" action="/api/login.php" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="username">Nombre de usuario</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre de usuario">
+              <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña">
+              <div id="password-error" class="error-message"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+            <hr>
+            <div class="text-center">
+              <p>No tienes cuenta? <a href="/register.html" style="color: blue;">Regístrate</a></p>
+              <p>¿Has olvidado tu contraseña? <a href="#" style="color: blue;">Haz click aquí</a></p>
+            </div>
+          </form>
+          <a href="/catalogo.html">
+            <button class="btn btn-primary btn-block" type="submit">
+                Volver Atrás
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Enlace a Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Enlace al kit de iconos de Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+  function validateForm() {
+    var username = document.getElementById('username').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var usernameError = document.getElementById('username-error');
+    var passwordError = document.getElementById('password-error');
+
+    // Verificar si alguno de los campos está vacío
+    if (username === '' || password === '') {
+      if (username === '') {
+        usernameError.textContent = 'Por favor, ingresa tu nombre de usuario.';
+        usernameError.style.display = 'block';
+      } else {
+        usernameError.textContent = '';
+        usernameError.style.display = 'none';
+      }
+
+      if (password === '') {
+        passwordError.textContent = 'Por favor, ingresa tu contraseña.';
+        passwordError.style.display = 'block';
+      } else {
+        passwordError.textContent = '';
+        passwordError.style.display = 'none';
+      }
+
+      // Evitar que el formulario se envíe
+      return false;
+    }
+
+    // Si ambos campos están llenos, el formulario se enviará
+    return true;
+  }
+</script>
+</body>
+</html>

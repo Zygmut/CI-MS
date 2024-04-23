@@ -1,0 +1,29 @@
+[
+  {
+    "_id": 1,
+    "nombre": "Alfabia",
+    "descripcion": "El primer jardín de esta lista pertenece a la antigua posesión de Alfábia situada en las inmediaciones del túnel de Sóller en el término municipal de Buñola. La posesión de Alfabia es una de las más antiguas de la isla y fue construida sobre una antigua alquería musulmana. La actual casa familiar se erigió en el siglo XV, aunque en el siglo XVIII se realizó una gran reforma dándole al lugar un estilo barroco. Si quieres saber más sobre la visita te dejamos con un artículo que dedicamos a este bonito rincón de Mallorca.",
+    "valoracion": 4.5,
+    "imagen": "https://i0.wp.com/www.eldiscretoencantodeviajar.com/wp-content/uploads/2017/04/alfabia-15.jpg?resize=1024%2C768&ssl=1",
+    "characteristics": ["hispano-árabe"],
+    "location": "Buñola"
+  },
+  {
+    "_id": 2,
+    "nombre": "Posesión de Raixa",
+    "descripcion": "Raixa es una posesión de origen árabe situada en el municipio de Buñola  a los pies de la Serra de Tramuntana. En la posesión de Raixa se encuentra el mejor jardín italiano de Mallorca, siendo famosa esta posesión por tener uno de los jardines más bonitos de Mallorca.\nFue le Cardenal Despuig que en el siglo XVIII mandó hacer unos jardines que fueran únicos en la isla. A lo largo del recorrido se encuentran diversos jardines: el jardín de los naranjos, el jardín de Apolo, el jardín Romántico, el jardín del Gran Safareig (estanque), el jardín de la Muntanyeta y el jardín de la Loggia.",
+    "valoracion": 4.2,
+    "imagen": "https://i0.wp.com/www.eldiscretoencantodeviajar.com/wp-content/uploads/2017/04/IMG_8468.jpg?w=2000&ssl=1",
+    "characteristics": ["Entrada Gratuita"],
+    "location": "Serra de Tramuntana"
+  },
+  {
+    "_id": 3,
+    "nombre": "Monasterio de Miramar",
+    "descripcion": "Fue en el año 1276 cuando Ramon Llull fundó el monasterio de Miramar donde se impartían clases de árabe y otras lenguas orientales, preparando así a los monjes franciscanos para convertir a los musulmanes al cristianismo. Ramón Llull residió en el Monasterio de Miramar durante tres años.\nEn 1872 el Archiduque Luis Salvador compró el monasterio ya que se enamoró del lugar y de sus vistas, en su obra Die Balearen dijo “ningún otro lugar de la tierra puede llevar con más propiedad el nombre de Miramar”. Fue otro de los tantos lugares de la Sierra de Tramuntana que le fascinó.",
+    "valoracion": 4.7,
+    "imagen": "https://i0.wp.com/www.eldiscretoencantodeviajar.com/wp-content/uploads/2019/04/DSC01991.jpg?w=2048&ssl=1",
+    "characteristics": ["Miradas al mar"],
+    "location": "Valldemossa"
+  }
+]
