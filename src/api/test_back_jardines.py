@@ -1,22 +1,20 @@
 import unittest, requests 
 
-ENDPOINT = "https://www.musapientum.com/api/catalogo.php"
-
 
 class TestCatalogo(unittest.TestCase):
     def test_headers(self):
-        res = requests.get(ENDPOINT)
+        res = requests.get("https://www.musapientum.com/api/jardines.php")
         self.assertEqual(res.status_code, 200)
         self.assertTrue("application/json" in res.headers["content-type"])
 
     def test_content(self):
-        res = requests.get(ENDPOINT)
+        res = requests.get("https://www.musapientum.com/api/jardines.php")
         self.assertEqual(res.status_code, 200)
-        keys = ["_id", "nombre", "descripcion", "coste", "imagen"]
+        keys = ["_id", "nombre", "descripcion", "valoracion", "imagen", "characteristics", "location"]
         for key in keys:
             self.assertIn(
                 key,
-                res.json()["plantas"],
+                res.json(),
                 f"La clave '{key}' no está presente en la respuesta JSON",
             )
 

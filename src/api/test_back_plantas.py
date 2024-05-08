@@ -1,4 +1,4 @@
-import unittest, requests  # noqa: E401
+import unittest, requests
 
 
 class TestCatalogo(unittest.TestCase):
