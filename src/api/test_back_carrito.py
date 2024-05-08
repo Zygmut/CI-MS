@@ -1,6 +1,6 @@
 import unittest, requests  # noqa: E401
 
-ENDPOINT = "https://www.musapientum.com/api/catalogo.php"
+ENDPOINT = "https://www.musapientum.com/api/carrito.php"
 
 
 class TestCatalogo(unittest.TestCase):
@@ -12,13 +12,8 @@ class TestCatalogo(unittest.TestCase):
     def test_content(self):
         res = requests.get(ENDPOINT)
         self.assertEqual(res.status_code, 200)
-        keys = ["_id", "nombre", "descripcion", "coste", "imagen"]
-        for key in keys:
-            self.assertIn(
-                key,
-                res.json()["plantas"],
-                f"La clave '{key}' no está presente en la respuesta JSON",
-            )
+        data = res.json()["status"]
+        self.assertEqual(data, "OK")
 
 
 if __name__ == "__main__":
